@@ -50,6 +50,7 @@
         'menu_class'      => 'navbar-nav ml-auto',
         'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
         'walker'          => new WP_Bootstrap_Navwalker(),
-    ) );
+        ) );
     ?>
-
+</nav>
+  

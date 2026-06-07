@@ -34,9 +34,9 @@ function tema_scripts() {
     //      Lato:       ?family=Lato:wght@300;400;700
     //      Montserrat: ?family=Montserrat:wght@300;400;700
     // ─────────────────────────────────────────────────────────
-    wp_enqueue_style(
+   wp_enqueue_style(
         'google-fonts',
-        '<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap',
+        'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap',
         array(),
         null
     );

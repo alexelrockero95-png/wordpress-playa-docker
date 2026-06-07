@@ -353,12 +353,6 @@ footer {
 .jumbotron-simple {
     background-image: url('images/jumbobar.jpg');
 }
-.jumbotron-Beach-bar { 
-    /* 🟢 MODIFICABLE: El diseño de cada "Puerto" en la lista. 'background-color: #1a1a1a' pinta el fondo de la caja gris. 'margin-bottom: 2rem' separa un puerto del siguiente. */
-    background-color: #160a99; padding: 2rem; margin-bottom: 2rem; 
-    /* 🟢 MODIFICABLE: Esta línea crea la rayita vertical gruesa a la izquierda usando el color morado. */
-    border-left: .5rem solid var(--color-principal);
-}
 
 
 /* ---- Contingut simple — ✅ DEIXAR, ajustar si cal ---- */

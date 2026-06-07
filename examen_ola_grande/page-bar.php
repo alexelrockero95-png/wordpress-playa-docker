@@ -22,7 +22,7 @@ get_header();
     </div>
  
     <!-- ② Jumbotron — 🔴 CANVIAR títol (aquesta pàgina NOMÉS té h1, sense <p>) -->
-    <div class="jumbotron-Beach-Bar">
+    <div class="jumbotron jumbotron-simple">
         <?php /* La classe jumbotron-distribution defineix el background-image al CSS */ ?>
         <div class="container">
             <h1>Beach Bar</h1>   <?php /* 🔴 CANVIAR: títol de la pàgina */ ?>

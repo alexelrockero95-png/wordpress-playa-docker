@@ -1,7 +1,6 @@
-/*
+     <!---  DEIXAR: el comentari "Template Name:" — WordPress el llegeix aquí*/
 
- *
- * ✅ DEIXAR: el comentari "Template Name:" — WordPress el llegeix aquí
+
  * 🔴 CANVIAR: el nom "Distribution" si el professor demana un altre
  *
  * Template Name: Bar

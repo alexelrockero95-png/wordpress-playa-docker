@@ -1,15 +1,11 @@
 <?php
-/**
- * functions.php — ✅ DEIXAR tota l'estructura
- * 🔴 CANVIAR: nom de la font a Google Fonts (línia marcada)
- */
+// functions.php — ✅ DEIXAR tota l'estructura
+// 🔴 CANVIAR: nom de la font a Google Fonts
 
-// ✅ DEIXAR: Carrega el navwalker (fitxer que has de tenir a l'arrel del tema)
+// ✅ DEIXAR: Carrega el navwalker 
 require_once get_template_directory() . '/wp-bootstrap-navwalker.php';
 
-/**
- * ✅ DEIXAR: Configuració bàsica del tema
- */
+// ✅ DEIXAR: Configuració bàsica del tema
 function tema_setup() {
     register_nav_menus( array(
         'primary' => __( 'Menú Principal', 'nom-tema' ),
@@ -19,22 +15,12 @@ function tema_setup() {
 }
 add_action( 'after_setup_theme', 'tema_setup' );
 
-/**
- * ✅ DEIXAR l'estructura, 🔴 CANVIAR la font
- */
+// ✅ DEIXAR l'estructura, 🔴 CANVIAR la font
 function tema_scripts() {
 
-    // ─────────────────────────────────────────────────────────
-    // 🔴 CANVIAR: Nom i pesos de la font (ha de coincidir amb
-    //    font-family al body del style.css)
-    //    Busca la URL a: https://fonts.google.com
-    //    Exemples:
-    //      Open Sans:  ?family=Open+Sans:wght@300;400;700
-    //      Roboto:     ?family=Roboto:wght@300;400;700
-    //      Lato:       ?family=Lato:wght@300;400;700
-    //      Montserrat: ?family=Montserrat:wght@300;400;700
-    // ─────────────────────────────────────────────────────────
-   wp_enqueue_style(
+    // 🔴 CANVIAR: Nom i pesos de la font (ha de coincidir amb font-family al CSS)
+    // CORREGIDO: Se quitó la etiqueta <link> que rompía el código
+    wp_enqueue_style(
         'google-fonts',
         'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap',
         array(),
@@ -57,7 +43,7 @@ function tema_scripts() {
         '1.0'
     );
 
-    // ✅ DEIXAR: jQuery (inclòs per WP), Popper i Bootstrap JS
+    // ✅ DEIXAR: jQuery, Popper i Bootstrap JS
     wp_enqueue_script( 'jquery' );
 
     wp_enqueue_script(

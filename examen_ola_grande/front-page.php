@@ -1,76 +1,64 @@
 <?php
-/*
- * front-page.php — Pàgina principal
- *
- * ✅ DEIXAR: l'estructura HTML (jumbotron-wrapper, cards-container, card-item)
- * 🔴 CANVIAR: imatges, títols, textos i URLs dels botons
- *
- * WordPress el carrega automàticament si a:
- * Configuració → Lectura → Pàgina principal estàtica → selecciones "Home"
- */
+// front-page.php — Pàgina principal
+//
+// ✅ DEIXAR: l'estructura HTML (jumbotron-wrapper, cards-container, card-item)
+// 🔴 CANVIAR: imatges, títols, textos i URLs dels botons
+//
+// WordPress el carrega automàticament si assignes "Home" a Ajustes -> Lectura.
+
 get_header();
 ?>
 
 <main>
 
-    <?php /* ① Imatge capçalera (SOBRE el jumbotron) — ✅ DEIXAR estructura */ ?>
     <div class="jumbotron-wrapper">
         <img
             class="big-logo"
             src="<?php echo get_template_directory_uri(); ?>/images/big.jpg"
             alt="Capçalera"
-            <?php /* 🔴 CANVIAR: big.jpg si la imatge té un altre nom */ ?>
+            <?php // 🔴 CANVIAR: big.jpg si la imatge té un altre nom ?>
         >
     </div>
 
-    <?php /* ② Jumbotron — 🔴 CANVIAR textos i classe CSS del background */ ?>
     <div class="jumbotron jumbotron-index">
-        <?php /* jumbotron-index → correspon a .jumbotron-index { background-image: ... } al CSS */ ?>
+        <?php // jumbotron-index → correspon a .jumbotron-index al CSS ?>
         <div class="container">
-            <h1>Nuestra Ola mallorquina</h1>     <?php /* 🔴 CANVIAR */ ?>
-            <p>Bienvenidos a nuestra ola</p>     <?php /* 🔴 CANVIAR */ ?>
+            <h1>La Ola Grande</h1>     <?php // 🔴 CANVIAR TÍTOL ?>
+            <p>Ride the perfect wave</p>     <?php // 🔴 CANVIAR TEXT ?>
         </div>
     </div>
 
-    <?php /* ③ Cards Flexbox — ✅ DEIXAR estructura, 🔴 CANVIAR contingut */ ?>
     <div class="cards-container">
 
-        <!-- Card 1 — 🔴 CANVIAR: imatge, títol, text, URL del botó -->
         <div class="card-item">
             <img
-                src="<?php echo get_template_directory_uri(); ?>/images/surfer.jpg"
+                src="<?php echo get_template_directory_uri(); ?>/images/surf.jpg"
                 alt="lessons"
             >
+            <?php // CORREGIDO ARRIBA: de surfer.jpg a surf.jpg ?>
             <div class="card-body">
-                <h5 class="card-title">Lecciones de surf</h5>
-                <p class="card-text">¡Aprende a surfear con nuestros expertos!</p>
+                <h5 class="card-title">Surf Lessons</h5>
+                <p class="card-text">Learn to surf with our expert instructors</p>
                 <a
-                    href="<?php echo esc_url( home_url( '/products' ) ); ?>"
+                    href="<?php echo esc_url( home_url( '/lessons' ) ); ?>"
                     class="btn-blue"
-                >Reservar lección aquí</a>
-                <?php
-                /*
-                 * ✅ DEIXAR: home_url('/slug') — posa el slug de la pàgina de destí
-                 * 🔴 CANVIAR: '/products' pel slug que hagi creat el professor
-                 */
-                ?>
+                >Book a lesson</a>
             </div>
         </div>
 
-        <!-- Card 2 — 🔴 CANVIAR: imatge, títol, text, URL del botó -->
         <div class="card-item">
-            <?php /* ✅ DEIXAR: nth-child(2) té margin-top: 15px al CSS (mòbil) */ ?>
+            <?php // ✅ DEIXAR: nth-child(2) té margin-top: 20px al CSS ?>
             <img
                 src="<?php echo get_template_directory_uri(); ?>/images/bar.jpg"
                 alt="bar"
             >
             <div class="card-body">
                 <h5 class="card-title">Beach Bar</h5>
-                <p class="card-text">Disfruta de nuestros cockteles con las preciosas vistas del oceano mediterraneo!</p>
+                <p class="card-text">Enjoy cocktails with stunning ocean views</p>
                 <a
-                    href="<?php echo esc_url( home_url( '/distribution' ) ); ?>"
+                    href="<?php echo esc_url( home_url( '/bar' ) ); ?>"
                     class="btn-blue"
-                >Mira nuestro menú</a>
+                >See our menu</a>
             </div>
         </div>
 

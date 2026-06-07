@@ -1,5 +1,10 @@
 <?php
-
+// front-page.php — Pàgina principal
+//
+// ✅ DEIXAR: l'estructura HTML (jumbotron-wrapper, cards-container, card-item)
+// 🔴 CANVIAR: imatges, títols, textos i URLs dels botons
+//
+// WordPress el carrega automàticament si assignes "Home" a Ajustes -> Lectura.
 
 get_header();
 ?>
@@ -10,12 +15,12 @@ get_header();
             class="big-logo"
             src="<?php echo get_template_directory_uri(); ?>/images/big.jpg"
             alt="Capçalera"
-            <?php  ?>
+            <?php // 🔴 CANVIAR: big.jpg si la imatge té un altre nom ?>
         >
     </div>
 
     <div class="jumbotron jumbotron-index">
-        <?php  ?>
+        <?php // jumbotron-index → correspon a .jumbotron-index al CSS ?>
         <div class="container">
             <h1>La Ola Grande</h1>     <?php // 🔴 CANVIAR TÍTOL ?>
             <p>Ride the perfect wave</p>     <?php // 🔴 CANVIAR TEXT ?>
@@ -29,7 +34,7 @@ get_header();
                 src="<?php echo get_template_directory_uri(); ?>/images/surf.jpg"
                 alt="lessons"
             >
-            <?php ?>
+            <?php // CORREGIDO ARRIBA: de surfer.jpg a surf.jpg ?>
             <div class="card-body">
                 <h5 class="card-title">Surf Lessons</h5>
                 <p class="card-text">Learn to surf with our expert instructors</p>
@@ -41,7 +46,7 @@ get_header();
         </div>
 
         <div class="card-item">
-            <?php  ?>
+            <?php // ✅ DEIXAR: nth-child(2) té margin-top: 20px al CSS ?>
             <img
                 src="<?php echo get_template_directory_uri(); ?>/images/bar.jpg"
                 alt="bar"

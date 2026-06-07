@@ -1,0 +1,384 @@
+/*
+ * ============================================================
+ * 🔴 CANVIAR: Nom del tema (WordPress el llegeix d'aquí)
+ * ============================================================
+Theme Name: La Ola Grande
+Theme URI:
+Author: Alejandro Ibañez Manzur
+Description: Ola Nueva Beach Club
+Version: 1.0
+Text Domain: ola-nueva-wp
+*/
+
+/* ============================================================
+   :ROOT — Variables i Hack rem
+   REGLA: Canviar NOMÉS els valors HEX dels colors,
+          mai els noms de variable ni l'estructura
+   ============================================================ */
+
+:root {
+    /* 🔴 CANVIAR: Els 3 colors que doni el professor */
+    --color-primary:   #1A5276;   /* navbar, footer, cards de fons */
+    --color-secondary: #F0B27A;   /* text footer, accents clars   */
+    --color-accent:    #117A65;   /* botons, elements destacats    */
+
+    /*
+     * ✅ DEIXAR: Mapa semàntic (vincula l'ús al color base)
+     * Si el professor canvia colors, només toca les 3 línies de dalt.
+     */
+    --navbar-bg:   var(--color-primary);
+    --footer-bg:   var(--color-primary);
+    --footer-text: var(--color-secondary);
+    --btn-bg:      var(--color-accent);
+    --card-bg:     var(--color-primary);
+    --card-text:   #ffffff;
+}
+
+/*
+ * ✅ DEIXAR: Hack rem — 1rem = 10px (facilita càlculs)
+ * Formula: px / 10 = rem
+ * Exemples: 16px = 1.6rem | 24px = 2.4rem | 1.7rem = 17px
+ *
+ * NOTA EXAMEN: Si el professor demana font-size: 16px al body,
+ * escriu font-size: 1.6rem (amb el hack) o 16px (sense hack).
+ * Activa el hack DESCOMENTANT les dues línies de sota:
+ */
+/* html { font-size: 62.5%; } */
+/* body { font-size: 1.6rem; } */
+
+/* ============================================================
+   /*css comú*/
+   ✅ DEIXAR tot — Reset i estils compartits per totes les pàgines
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* 🔴 CANVIAR: La font (ha de coincidir amb la que carregues a functions.php) */
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;   /* el professor pot demanar un valor concret */
+    font-weight: 400;
+    color: #333;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ---- Navbar ---- ✅ DEIXAR estructura, 🔴 CANVIAR colors si cal --- */
+
+.navbar {
+    background-color: var(--navbar-bg) !important;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-brand img {
+    height: 60px;    /* 🔴 CANVIAR si el logo és molt gran o molt petit */
+    width: auto;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    font-weight: 400;
+    padding: 0.5rem 1rem;
+    transition: color 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--color-secondary) !important;
+}
+
+/* Botó hamburguesa — ✅ DEIXAR (canvia el color HEX si els colors canvien) */
+.navbar-toggler {
+    border-color: var(--color-secondary);
+}
+
+.navbar-toggler-icon {
+    /* 🔴 CANVIAR: el color HEX del stroke ha de coincidir amb --color-secondary */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='%23F0B27A' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    /* Substitueix %23FCDE2E pel HEX de --color-secondary codificat (#→%23) */
+}
+
+/* Menú desplegat en mòbil — ✅ DEIXAR */
+@media (max-width: 767.98px) {
+    .navbar-collapse {
+        background-color: var(--navbar-bg);
+        padding: 1rem 0;
+    }
+    .navbar-nav .nav-link {
+        padding: 0.75rem 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* ---- Jumbotron comú — ✅ DEIXAR estructura ---- */
+
+.jumbotron-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.jumbotron-wrapper img.big-logo {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.jumbotron {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 0;
+    margin-bottom: 0;
+    padding: 4rem 2rem;
+    position: relative;
+}
+
+.jumbotron::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.jumbotron .container {
+    position: relative;
+    z-index: 1;
+}
+
+.jumbotron h1 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.jumbotron p {
+    /* ✅ DEIXAR: el professor especifica exactament aquests valors */
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: #fff;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 767.98px) {
+    .jumbotron {
+        padding: 2.5rem 1.5rem;
+    }
+    .jumbotron h1 {
+        font-size: 2rem;
+    }
+    .jumbotron p {
+        font-size: 1.3rem;
+    }
+}
+
+/* ---- Footer — ✅ DEIXAR estructura, 🔴 CANVIAR si cal ---- */
+
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 1.5rem 2rem;
+}
+
+/* Text curt: visible per defecte (mòbil), centrat */
+.footer-short {
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--footer-text);
+}
+
+/* Text complet: amagat per defecte, visible a md+ */
+.footer-full {
+    display: none;
+    font-size: 0.875rem;
+    color: var(--footer-text);
+    line-height: 1.7;
+}
+
+/* ✅ DEIXAR: media query del footer */
+@media (min-width: 768px) {
+    .footer-full  { display: block; }
+    .footer-short { display: none;  }
+}
+
+/* ============================================================
+   /*css propi de front-page.php*/
+   ============================================================ */
+
+/* 🔴 CANVIAR: Imatge de fons del jumbotron de la front-page */
+.jumbotron-index {
+    background-image: url('images/jumboola.jpg');
+    /* Canvia el nom del fitxer si la imatge té un altre nom */
+}
+
+/* ---- Cards Flexbox — ✅ DEIXAR estructura ---- */
+
+.cards-container {
+    display: flex;
+    flex-direction: column;   /* mòbil: apilades */
+    width: 100%;
+    padding: 1.25rem;
+}
+
+.card-item {
+    flex: 1;
+    background-color: var(--card-bg);
+    color: var(--card-text);
+    text-align: center;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+/* 🔴 CANVIAR: 15px és el que demana el professor en aquest examen */
+.card-item:nth-child(2) {
+    margin-top: 15px;
+}
+
+.card-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-item .card-body {
+    padding: 1.25rem 1rem;
+    background-color: var(--card-bg);
+}
+
+.card-item .card-title {
+    color: var(--card-text);
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-item .card-text {
+    color: var(--card-text);
+    font-size: 0.9375rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Botó — ✅ DEIXAR classe, color ve de --btn-bg */
+.btn-blue {
+    display: inline-block;
+    background-color: var(--btn-bg);
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.btn-blue:hover {
+    opacity: 0.85;
+    color: #fff;
+}
+
+/* ✅ DEIXAR: media query de les cards */
+@media (min-width: 768px) {
+    .cards-container {
+        flex-direction: row;
+    }
+    .card-item:nth-child(2) {
+        margin-top: 20px;
+    }
+    .card-item img {
+        height: 280px;
+    }
+}
+
+/* ============================================================
+   /*css propi de page-products.php*/
+   (o el nom que tingui la pàgina de galeria / contingut grid)
+   ============================================================ */
+
+/* 🔴 CANVIAR: Imatge de fons del jumbotron d'aquesta pàgina */
+.jumbotron-galeria {
+    background-image: url('images/jumbolessons.jpg');
+}
+
+/* ---- Galeria CSS Grid — ✅ DEIXAR estructura ---- */
+
+.lessons-gallery {
+    display: grid;
+    grid-template-columns: 1fr;         /* mòbil: 1 columna */
+    gap: 15px;                           /* ✅ el professor especifica 20px */
+    padding: 1.5rem;
+}
+
+.lessons-gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* ✅ DEIXAR: media query de la galeria */
+@media (min-width: 768px) {
+    .lessons-gallery {
+        /* 🔴 CANVIAR: el nombre de columnes si el professor en demana un altre */
+        grid-template-columns: repeat(2, 1fr);
+        padding: 2.5rem 3rem;
+    }
+    .lessons-gallery img {
+        height: 250px;
+    }
+}
+
+/* ============================================================
+   /*css propi de page-distribution.php*/
+   (o el nom que tingui la pàgina de contingut simple)
+   ============================================================ */
+
+/* 🔴 CANVIAR: Imatge de fons del jumbotron d'aquesta pàgina */
+.jumbotron-simple {
+    background-image: url('images/jumbobar.jpg');
+}
+.jumbotron-Beach-bar { 
+    /* 🟢 MODIFICABLE: El diseño de cada "Puerto" en la lista. 'background-color: #1a1a1a' pinta el fondo de la caja gris. 'margin-bottom: 2rem' separa un puerto del siguiente. */
+    background-color: #160a99; padding: 2rem; margin-bottom: 2rem; 
+    /* 🟢 MODIFICABLE: Esta línea crea la rayita vertical gruesa a la izquierda usando el color morado. */
+    border-left: .5rem solid var(--color-principal);
+}
+
+
+/* ---- Contingut simple — ✅ DEIXAR, ajustar si cal ---- */
+
+.simple-content {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.simple-content p {
+    margin-bottom: 1rem;
+}
+
+.simple-content h2,
+.simple-content h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+}

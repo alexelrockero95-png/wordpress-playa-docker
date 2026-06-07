@@ -31,7 +31,7 @@ get_header();
     </div>
 
     <!-- ③ Galeria CSS Grid — ✅ DEIXAR lògica, 🔴 CANVIAR variables -->
-    <div class="products-gallery">
+    <div class="lessons-gallery">
         <?php
         /*
          * 🔴 CANVIAR:

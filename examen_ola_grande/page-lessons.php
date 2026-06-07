@@ -1,7 +1,7 @@
 <?php
 /*
  *
- * ✅ DEIXAR: el comentari "Template Name:" — WordPress el llegeix aquí
+ *  <!-- ✅ DEIXAR: el comentari "Template Name:" — WordPress el llegeix aquí -->
  * 🔴 CANVIAR: el nom "Products" si el professor demana un altre
  *
  * Template Name: Lessons

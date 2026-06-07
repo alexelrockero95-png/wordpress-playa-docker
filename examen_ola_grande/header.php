@@ -3,13 +3,11 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <?php wp_head(); // ✅ DEIXAR: carrega tots els CSS/JS registrats a functions.php ?>
+    <?php wp_head(); 
 </head>
 <body <?php body_class(); ?>>
 
 <?php
-// ✅ DEIXAR: Tot el navbar és codi fix.
-// L'únic que canvia visualment son els colors (via CSS :root).
 ?>
 
 <nav class="navbar navbar-expand-md">

@@ -1,6 +1,4 @@
 <?php
-// ✅ DEIXAR: el comentari "Template Name:" a baix — WordPress el llegeix allà
-// 🔴 CANVIAR: el nom "Bar" si el professor demana un altre
 /* Template Name: Bar */
 
 get_header();

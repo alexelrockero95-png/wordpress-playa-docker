@@ -1,18 +1,11 @@
 <?php
-// footer.php
-// ✅ DEIXAR: tota l'estructura HTML i les classes CSS
-// 🔴 CANVIAR: els textos (el professor pot demanar textos concrets)
+
 ?>
 <footer>
     <div class="container-fluid">
 
         <?php
-        // ✅ DEIXAR: Lògica de dos textos (complet md+ / curt mòbil).
-        // El CSS s'encarrega de mostrar/amagar amb @media.
-        //
-        // 🔴 CANVIAR: els textos si el professor en dona d'altres.
-        // REGLA: footer-full = text complet (visible a md+)
-        //        footer-short = text curt centrat (visible a mòbil)
+
         ?>
 
         <p class="footer-full">
@@ -27,6 +20,6 @@
     </div>
 </footer>
 
-<?php wp_footer(); // ✅ DEIXAR: obligatori per Bootstrap JS i WordPress ?>
+<?php wp_footer();  ?>
 </body>
 </html>
